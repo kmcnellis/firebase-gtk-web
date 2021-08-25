@@ -14,8 +14,8 @@
     "url": "https://github.com/kmcnellis/firebase-gtk-web.git"
   },
   "dependencies": {
-    "firebase": "^9.0.0-beta.8",
-    "firebaseui": "^0.600.0-rc.0"
+    "firebase": "^9.0.0",
+    "firebaseui": "~0.600.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",

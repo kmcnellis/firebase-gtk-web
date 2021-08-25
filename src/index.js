@@ -47,9 +47,9 @@ async function main() {
   try {
     if (firebaseConfig && firebaseConfig.apiKey) {
       initializeApp(firebaseConfig);
-      db = getFirestore();
-      auth = getAuth();
     }
+    db = getFirestore();
+    auth = getAuth();
   } catch (e) {
     console.error(e);
     document.getElementById('app').innerHTML =
