@@ -3,7 +3,7 @@ import './style.css';
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import { initializeApp } from 'firebase/app';
 
-// Add the Firebase products that you want to use
+// Add the Firebase products and methods that you want to use
 import {
   getAuth,
   EmailAuthProvider,
@@ -43,6 +43,7 @@ let db, auth;
 async function main() {
   // Add Firebase project configuration object here
   const firebaseConfig = {};
+
   // Make sure Firebase is initilized
   try {
     if (firebaseConfig && firebaseConfig.apiKey) {
@@ -51,7 +52,7 @@ async function main() {
     db = getFirestore();
     auth = getAuth();
   } catch (e) {
-    console.error(e);
+    console.log('error:', e);
     document.getElementById('app').innerHTML =
       '<h1>Welcome to the Codelab! Add your Firebase config object to <pre>/index.js</pre> and refresh to get started</h1>';
     throw new Error(
@@ -67,7 +68,7 @@ async function main() {
       EmailAuthProvider.PROVIDER_ID
     ],
     callbacks: {
-      signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      signInSuccessWithAuthResult: function (authResult, redirectUrl) {
         // Handle sign-in.
         // Return false to avoid redirect.
         return false;

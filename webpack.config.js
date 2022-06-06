@@ -79,16 +79,10 @@ module.exports = (env, argv) => ({
     // }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'src'),
-    watchContentBase: true,
+    static: path.resolve(__dirname, 'src'),
     port: 8080,
-    inline: true,
     hot: true,
     open: true,
-    stats: {
-      children: false, // Hide children information
-      maxModules: 0 // Set the maximum number of modules to be shown
-    },
     proxy: {
       '/__': 'http://localhost:5000'
     }
